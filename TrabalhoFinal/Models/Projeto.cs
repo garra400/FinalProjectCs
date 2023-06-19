@@ -14,6 +14,7 @@ namespace TrabalhoFinal.Models
         public string Nome { get; set; }
         public int UsuarioResponsavelId { get; set; }
         public Usuario UsuarioResponsavel { get; set; }
+        public string? Descricao {get; set; }
         public List<ProjetoUsuario> ProjetosUsuarios { get; set; }
         public List<Tarefa> Tarefas { get; set; }
         public string? Status { get; set; } // Adicionada a propriedade "Status"

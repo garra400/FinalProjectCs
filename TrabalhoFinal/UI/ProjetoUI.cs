@@ -17,12 +17,15 @@ namespace TrabalhoFinal.UI
             Console.WriteLine();
             Console.Write("Digite o nome do Projeto: ");
             string nomeProjeto = Console.ReadLine();
+            Console.Write("Digite a descrição do Projeto: ");
+            string descricaoProjeto = Console.ReadLine();
 
             Projeto Projeto = new Projeto
             {
                 Nome = nomeProjeto,
                 UsuarioResponsavelId = Usuario.UsuarioId,
-                Status = "Em andamento"
+                Status = "Em andamento",
+                Descricao = descricaoProjeto
             };
 
             db.Projetos.Add(Projeto);
@@ -54,7 +57,7 @@ namespace TrabalhoFinal.UI
             {
                 foreach (var Projeto in Projetos)
                 {
-                    Console.WriteLine($"ID: {Projeto.ProjetoId}, Nome: {Projeto.Nome}, Status: {Projeto.Status} ");
+                    Console.WriteLine($"ID: {Projeto.ProjetoId}, Nome: {Projeto.Nome}, Status: {Projeto.Status}, Descrição: {Projeto.Descricao}");
                 }
             }
         }
@@ -88,7 +91,7 @@ namespace TrabalhoFinal.UI
 
             while (!sair)
             {
-                Console.WriteLine($"== Projeto: {Projeto.Nome} // Status: {Projeto.Status} ==");
+                Console.WriteLine($"== Projeto: {Projeto.Nome} // Status: {Projeto.Status}\n Descrição: {Projeto.Descricao} ==");
                 Console.WriteLine();
                 Console.WriteLine("1. Configurar Projeto");
                 Console.WriteLine("2. Adicionar Pessoa ao Projeto");
